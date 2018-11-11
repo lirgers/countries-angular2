@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { MasterService } from './master.service'
+import { SlaveService } from './slave.service'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    providers: [MasterService, SlaveService]
 })
+
 export class AppComponent {
-  title = 'Countries';
+    countries : object;
+    cities : object;
+    countryId: number;
+
+    constructor(masterService : MasterService, slaveService: SlaveService) {
+        this.countries = masterService.getCountries();
+        this.cities = slaveService.getCities();
+        this.countryId = 3;
+    }
 }
