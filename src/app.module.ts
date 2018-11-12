@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 import { Countries } from './components/countries/countries.component';
 import { AppComponent } from './components/app/app.component';
 import { Cities } from './components/cities/cities.component';
+import { AddCityForm } from './components/add-city-form/form.component'
 
 import { SearchFilterPipe } from './etc/search-filter-pipe';
 
@@ -11,10 +14,12 @@ import { SearchFilterPipe } from './etc/search-filter-pipe';
     AppComponent,
     Countries,
     Cities,
+    AddCityForm,
     SearchFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

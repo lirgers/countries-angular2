@@ -4,6 +4,7 @@
 }
 
 .cities {
+    background-color: #EFF4F7;
     flex-direction: column;
     justify-content: flex-start;
     border-radius: 5px;
@@ -12,9 +13,16 @@
     border-width: thin;
 }
 
+.buttonDelete, .buttonEdit {
+    cursor: pointer;
+}
+
 .city {
     margin: 10px;
-    cursor: pointer;
+}
+
+.formContainer {
+    padding: 10px;
 }
 
 .line {

@@ -1,13 +1,28 @@
 <div class = 'citiesContainer'>
     <h4 class='title'>{{title}}</h4>
     <div class='cities'>
-        
+        <div class='formContainer'>
+            <button *ngIf="!isAddForm" (click) = "showAddForm()">
+                Add city
+            </button>
+            <add-city-form *ngIf="isAddForm" (cityAdd)="addCity($event)" (formCancel)="hideAddForm()">
+            </add-city-form>
+        </div>
+
+        <div class='line'></div>
+
         <div
             *ngFor = "let i = index; let city of cities | searchfilter: 'country_id' : countryId"
-            (click) = "deleteCity(city.id)">
+            >
             <div class='city'>
                 {{city.title}}
             </div>
+            <button class='buttonEdit'>
+                Edit
+            </button>
+            <button (click) = "deleteCity(city.id)" class='buttonDelete'>
+                Delete
+            </button>
             <div *ngIf="!(city.last)" class='line'></div>
         </div>
     </div>

@@ -1,0 +1,7 @@
+<h4>Add city</h4>
+<form (ngSubmit)="add(); addCityForm.reset()" #addCityForm="ngForm">
+  <input type="text" placeholder="County name..." [(ngModel)]="newCityTitle" name="title" required>
+  <input type="text" placeholder="Country description..." [(ngModel)]="newCityText" name="text" required>
+  <button type="submit" [disabled]="addCityForm.form.invalid">Submit</button>
+  <button type="reset" (click)="cancel()" >Cancel</button>
+</form>
