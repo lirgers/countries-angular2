@@ -12,7 +12,6 @@ export class Cities {
     editingCityId : number = -1;
     @Input() cities : any[];
     @Input() countryId;
-    @Output() citiesChange = new EventEmitter();
 
     deleteCity(id) {
         let index = this.cities.findIndex(function(city) {
@@ -24,7 +23,6 @@ export class Cities {
         }
 
         this.cities.splice(index, 1);
-        //this.citiesChange.emit(this.cities);
     }
 
     addCity(city) {
@@ -52,7 +50,6 @@ export class Cities {
         this.cities[cityIndexToEdit] = Object.assign({}, city);
         this.cities[cityIndexToEdit].azaz = 'azaz';
 
-        //this.citiesChange.emit(this.cities);
         this.hideEditForm();
     }
 

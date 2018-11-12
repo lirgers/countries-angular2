@@ -1,8 +1,8 @@
-<p class='title'>Edit city {{newCityTitle}}</p>
+<p class="title">Edit city {{newCityTitle}}</p>
 <form (ngSubmit)="edit(); editCityForm.reset()" #editCityForm="ngForm">
-  <div class='container'>
-    <input class='input' type="text" placeholder="City name..." [(ngModel)]="newCityTitle" name="title" required>
-    <input class='inputDesc' type="text" placeholder="City description..." [(ngModel)]="newCityDesc" name="desc">
+  <div class="container">
+    <input class="input" type="text" placeholder="City name..." [(ngModel)]="newCityTitle" name="title" required>
+    <input class="inputDesc" type="text" placeholder="City description..." [(ngModel)]="newCityDesc" name="desc">
     <div>
       <button class="buttonSubmit" type="submit" [disabled]="editCityForm.form.invalid">Submit</button>
       <button class="buttonCancel" type="reset" (click)="cancel()" >Cancel</button>

@@ -1,20 +1,18 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class='header'>
-    <p class='title'>Countries of the world</p>
+<div class="header">
+    <p class="title">Countries of the world</p>
 </div>
-<div class='container'>
+<div class="container">
     <countries
         [countries]="countries"
         [countryId]="countryId"
         (countryIdChange)="countryId=$event"
-        class = 'countries'
+        class = "countries"
     >
     </countries>
     <cities
         [cities]="cities"
         [countryId]="countryId"
-        (citiesChange)="cities=$event"
-        class = 'cities'
+        class = "cities"
     >
     </cities>
 </div>

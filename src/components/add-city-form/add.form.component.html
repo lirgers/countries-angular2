@@ -1,11 +1,11 @@
-<p class='title'>Add city</p>
+<p class="title">Add city</p>
 <form (ngSubmit)="add(); addCityForm.reset()" #addCityForm="ngForm">
-  <div class='container'>
-    <input class='input' type="text" placeholder="County name..." [(ngModel)]="newCityTitle" name="title" required>
-    <input class='inputDesc' type="text" placeholder="Country description..." [(ngModel)]="newCityText" name="text" required>
+  <div class="container">
+    <input class="input" type="text" placeholder="County name..." [(ngModel)]="newCityTitle" name="title" required>
+    <input class="inputDesc" type="text" placeholder="Country description..." [(ngModel)]="newCityText" name="text">
     <div>
-      <button class='buttonSubmit' type="submit" [disabled]="addCityForm.form.invalid">Submit</button>
-      <button class='buttonCancel' type="reset" (click)="cancel()" >Cancel</button>
+      <button class="buttonSubmit" type="submit" [disabled]="addCityForm.form.invalid">Submit</button>
+      <button class="buttonCancel" type="reset" (click)="cancel()" >Cancel</button>
     </div>
   </div>
 </form>

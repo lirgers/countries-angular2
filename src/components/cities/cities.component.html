@@ -1,40 +1,40 @@
-<div class = 'citiesContainer'>
-    <h4 class='title'>{{title}}</h4>
-    <div class='cities'>
-        <div class='formContainer'>
-            <button class = 'buttonAdd' *ngIf="!isAddForm" (click) = "showAddForm()">
+<div class = "citiesContainer">
+    <h4 class="title">{{title}}</h4>
+    <div class="cities">
+        <div class="formContainer">
+            <button class = "buttonAdd" *ngIf="!isAddForm" (click) = "showAddForm()">
                 + Add city
             </button>
             <add-city-form *ngIf="isAddForm" (cityAdd)="addCity($event)" (formCancel)="hideAddForm()">
             </add-city-form>
         </div>
 
-        <div class='line'></div>
+        <div class="line"></div>
         <div
             *ngFor = "let i = index; let city of cities | searchfilter: 'country_id' : countryId"
             >
             <div class="formContainer">
                 <edit-city-form *ngIf="editingCityId === city.id" (cityEdit)="editCity($event)" (formCancel)="hideEditForm($event)" [city]="city">
                 </edit-city-form>
-                <div class= 'cityContainer' *ngIf="editingCityId !== city.id">
-                    <div class='cityInfo'>
-                        <p class='cityTitle'>
+                <div class= "cityContainer" *ngIf="editingCityId !== city.id">
+                    <div class="cityInfo">
+                        <p class="cityTitle">
                             {{city.title}}
                         </p>
-                        <span class='cityDesc'>
+                        <span class="cityDesc">
                             {{city.desc}}
                         </span>
                     </div>
                     <div class="buttonsContainer">
-                        <div class='buttonEdit' (click) = "showEditForm(city.id)">
+                        <div class="buttonEdit" (click) = "showEditForm(city.id)">
                         </div>
-                        <div (click) = "deleteCity(city.id)" class='buttonDelete'>
+                        <div (click) = "deleteCity(city.id)" class="buttonDelete">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div *ngIf="!(city.last)" class='line'></div>
+            <div *ngIf="!(city.last)" class="line"></div>
         </div>
     </div>
 </div>
