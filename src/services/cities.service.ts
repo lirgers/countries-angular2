@@ -1,5 +1,5 @@
 
-export class SlaveService {
+export class CitiesService {
     getCities() {
         return [
             {

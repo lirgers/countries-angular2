@@ -1,5 +1,5 @@
 
-export class MasterService {
+export class CountriesService {
     getCountries() {
         return [
             {"id": 1, "title":"United Kingdom","text":"The United Kingdom of Great Britain and Northern Ireland, commonly known as the United Kingdom (UK) or Britain, is a sovereign state in Europe."},

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Countries } from './master.component';
-import { AppComponent } from './app.component';
-import { Cities } from './slave.component';
+import { Countries } from './components/countries/countries.component';
+import { AppComponent } from './components/app/app.component';
+import { Cities } from './components/cities/cities.component';
 
-import { SearchFilterPipe } from './search-filter-pipe';
+import { SearchFilterPipe } from './etc/search-filter-pipe';
 
 @NgModule({
   declarations: [

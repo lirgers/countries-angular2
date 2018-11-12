@@ -1,12 +1,12 @@
 import { Component } from '@angular/core'
-import { MasterService } from './master.service'
-import { SlaveService } from './slave.service'
+import { CountriesService } from '../../services/countries.service'
+import { CitiesService } from '../../services/cities.service'
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    providers: [MasterService, SlaveService]
+    providers: [CountriesService, CitiesService]
 })
 
 export class AppComponent {
@@ -14,9 +14,9 @@ export class AppComponent {
     cities : object;
     countryId : number;
 
-    constructor(masterService : MasterService, slaveService: SlaveService) {
+    constructor(masterService : CountriesService, citiesService: CitiesService) {
         this.countries = masterService.getCountries();
-        this.cities = slaveService.getCities();
+        this.cities = citiesService.getCities();
         this.countryId = 1;
     }
 }

@@ -1,0 +1,14 @@
+<div class = 'citiesContainer'>
+    <h4 class='title'>{{title}}</h4>
+    <div class='cities'>
+        
+        <div
+            *ngFor = "let i = index; let city of cities | searchfilter: 'country_id' : countryId"
+            (click) = "deleteCity(city.id)">
+            <div class='city'>
+                {{city.title}}
+            </div>
+            <div *ngIf="!(city.last)" class='line'></div>
+        </div>
+    </div>
+</div>

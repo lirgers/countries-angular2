@@ -1,8 +1,0 @@
-<div class = 'cities'>
-    <h4 class='title'>{{title}}</h4>
-    <div class = 'city'
-        *ngFor = "let city of cities | searchfilter: 'country_id' : countryId"
-        (click) = "deleteCity(city.id)">
-            {{city.title}}
-    </div>
-</div>

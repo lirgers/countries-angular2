@@ -2,8 +2,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'cities',
-    templateUrl: './slave.component.html',
-    styleUrls: ['./slave.component.css']
+    templateUrl: './cities.component.html',
+    styleUrls: ['./cities.component.css']
 })
 
 export class Cities {

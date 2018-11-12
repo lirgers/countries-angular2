@@ -13,6 +13,7 @@ export class SearchFilterPipe implements PipeTransform {
       if (!items) return [];
       let arr = items.filter(it => it[field] == value);
       this.tmp.push(...arr);
+      this.tmp[this.tmp.length - 1].last = true;
       return this.tmp;
     }
 }
