@@ -2,8 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'add-city-form',
-    templateUrl: './form.component.html',
-    styleUrls: ['./form.component.css']
+    templateUrl: './add.form.component.html',
+    styleUrls: ['./add.form.component.css']
 })
 
 export class AddCityForm {
