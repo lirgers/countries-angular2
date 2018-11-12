@@ -2,8 +2,8 @@
     <h4 class='title'>{{title}}</h4>
     <div class='cities'>
         <div class='formContainer'>
-            <button *ngIf="!isAddForm" (click) = "showAddForm()">
-                Add city
+            <button class = 'buttonAdd' *ngIf="!isAddForm" (click) = "showAddForm()">
+                + Add city
             </button>
             <add-city-form *ngIf="isAddForm" (cityAdd)="addCity($event)" (formCancel)="hideAddForm()">
             </add-city-form>
@@ -13,18 +13,25 @@
         <div
             *ngFor = "let i = index; let city of cities | searchfilter: 'country_id' : countryId"
             >
-            <edit-city-form *ngIf="editingCityId === city.id" (cityEdit)="editCity($event)" (formCancel)="hideEditForm($event)" [city]="city">
-            </edit-city-form>
-            <div *ngIf="editingCityId !== city.id">
-                <div class='city'>
-                    {{city.title}}
+            <div class="formContainer">
+                <edit-city-form *ngIf="editingCityId === city.id" (cityEdit)="editCity($event)" (formCancel)="hideEditForm($event)" [city]="city">
+                </edit-city-form>
+                <div class= 'cityContainer' *ngIf="editingCityId !== city.id">
+                    <div class='cityInfo'>
+                        <p class='cityTitle'>
+                            {{city.title}}
+                        </p>
+                        <span class='cityDesc'>
+                            {{city.desc}}
+                        </span>
+                    </div>
+                    <div class="buttonsContainer">
+                        <div class='buttonEdit' (click) = "showEditForm(city.id)">
+                        </div>
+                        <div (click) = "deleteCity(city.id)" class='buttonDelete'>
+                        </div>
+                    </div>
                 </div>
-                <button class='buttonEdit' (click) = "showEditForm(city.id)">
-                    Edit
-                </button>
-                <button (click) = "deleteCity(city.id)" class='buttonDelete'>
-                    Delete
-                </button>
             </div>
 
             <div *ngIf="!(city.last)" class='line'></div>

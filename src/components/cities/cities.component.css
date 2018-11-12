@@ -13,12 +13,36 @@
     border-width: thin;
 }
 
-.buttonDelete, .buttonEdit {
+.buttonAdd {
+    color: white;
+    background-color: #2469B2;
     cursor: pointer;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    border: #D4DADD;
+    border-style: solid;
+    border-width: thin;
 }
 
-.city {
-    margin: 10px;
+.buttonDelete, .buttonEdit {
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    padding: 20px;
+    margin-right: 5px;
+}
+
+.buttonDelete {
+    background: url(../../assets/delete-icon.png) no-repeat center;
+}
+
+.buttonEdit {
+    background: url(../../assets/edit-icon.png) no-repeat center;
 }
 
 .formContainer {
@@ -36,4 +60,30 @@
     font-size: larger;
     color: black;
     margin: 10px;
+}
+
+.cityContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.cityInfo {
+    flex: 10;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+}
+
+.cityTitle {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.cityDesc {
+    word-wrap: break-word;
 }
