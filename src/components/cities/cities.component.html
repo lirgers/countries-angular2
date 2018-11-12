@@ -10,19 +10,23 @@
         </div>
 
         <div class='line'></div>
-
         <div
             *ngFor = "let i = index; let city of cities | searchfilter: 'country_id' : countryId"
             >
-            <div class='city'>
-                {{city.title}}
+            <edit-city-form *ngIf="editingCityId === city.id" (cityEdit)="editCity($event)" (formCancel)="hideEditForm($event)" [city]="city">
+            </edit-city-form>
+            <div *ngIf="editingCityId !== city.id">
+                <div class='city'>
+                    {{city.title}}
+                </div>
+                <button class='buttonEdit' (click) = "showEditForm(city.id)">
+                    Edit
+                </button>
+                <button (click) = "deleteCity(city.id)" class='buttonDelete'>
+                    Delete
+                </button>
             </div>
-            <button class='buttonEdit'>
-                Edit
-            </button>
-            <button (click) = "deleteCity(city.id)" class='buttonDelete'>
-                Delete
-            </button>
+
             <div *ngIf="!(city.last)" class='line'></div>
         </div>
     </div>

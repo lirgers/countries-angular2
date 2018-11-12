@@ -6,6 +6,7 @@ import { Countries } from './components/countries/countries.component';
 import { AppComponent } from './components/app/app.component';
 import { Cities } from './components/cities/cities.component';
 import { AddCityForm } from './components/add-city-form/add.form.component'
+import { EditCityForm } from './components/edit-city-form/edit.form.component'
 
 import { SearchFilterPipe } from './etc/search-filter-pipe';
 
@@ -15,6 +16,7 @@ import { SearchFilterPipe } from './etc/search-filter-pipe';
     Countries,
     Cities,
     AddCityForm,
+    EditCityForm,
     SearchFilterPipe
   ],
   imports: [

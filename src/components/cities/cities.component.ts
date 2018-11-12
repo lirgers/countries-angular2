@@ -8,8 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class Cities {
     title = 'Cities';
-    isAddForm = false;
-    @Input() cities;
+    isAddForm : boolean = false;
+    editingCityId : number = -1;
+    @Input() cities : any[];
     @Input() countryId;
     @Output() citiesChange = new EventEmitter();
 
@@ -23,7 +24,7 @@ export class Cities {
         }
 
         this.cities.splice(index, 1);
-        this.citiesChange.emit(this.cities);
+        //this.citiesChange.emit(this.cities);
     }
 
     addCity(city) {
@@ -39,11 +40,35 @@ export class Cities {
         this.hideAddForm();
     }
 
+    editCity(city) {
+        const cityIndexToEdit = this.cities.findIndex(item => {
+            return item.id === city.id;
+        });
+
+        if (cityIndexToEdit === -1) {
+            return;
+        }
+
+        this.cities[cityIndexToEdit] = Object.assign({}, city);
+        this.cities[cityIndexToEdit].azaz = 'azaz';
+
+        //this.citiesChange.emit(this.cities);
+        this.hideEditForm();
+    }
+
     showAddForm() {
         this.isAddForm = true;
     }
 
     hideAddForm() {
         this.isAddForm = false;
+    }
+
+    showEditForm(id) {
+        this.editingCityId = id;
+    }
+
+    hideEditForm() {
+        this.editingCityId = -1;
     }
 }
