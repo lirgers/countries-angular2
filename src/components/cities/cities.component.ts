@@ -48,7 +48,6 @@ export class Cities {
         }
 
         this.cities[cityIndexToEdit] = Object.assign({}, city);
-        this.cities[cityIndexToEdit].azaz = 'azaz';
 
         this.hideEditForm();
     }
