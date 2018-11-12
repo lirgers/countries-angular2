@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class Countries {
+    title = 'Countries';
     @Input() countries;
     @Input() countryId;
     @Output() countryIdChange = new EventEmitter();
@@ -14,5 +15,9 @@ export class Countries {
     chooseCountry(id) {
         this.countryId = id;
         this.countryIdChange.emit(id);
+    }
+
+    isChosen(id) {
+        return id === this.countryId;
     }
 }

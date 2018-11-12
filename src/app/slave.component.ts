@@ -7,6 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class Cities {
+    title = 'Cities';
     @Input() cities;
     @Input() countryId;
     @Output() citiesChange = new EventEmitter();

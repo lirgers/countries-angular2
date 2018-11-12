@@ -1,7 +1,20 @@
 <div class = 'countries'>
+    <h4 class = 'title'>{{title}}</h4>
     <div class = 'country'
+        [ngClass]="{'chosenContainer': isChosen(country.id) }"
         *ngFor = "let country of countries"
         (click) = "chooseCountry(country.id)">
+        <p
+            class='countryTitle'
+            [ngClass]="{'chosenText': isChosen(country.id) }"
+        >
             {{country.title}}
+        </p>
+        <p
+            class='countryText'
+            [ngClass]="{'chosenText': isChosen(country.id) }"
+            >
+            {{country.text}}
+        </p>
     </div>
 </div>

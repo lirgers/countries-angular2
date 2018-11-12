@@ -12,11 +12,11 @@ import { SlaveService } from './slave.service'
 export class AppComponent {
     countries : object;
     cities : object;
-    countryId: number;
+    countryId : number;
 
     constructor(masterService : MasterService, slaveService: SlaveService) {
         this.countries = masterService.getCountries();
         this.cities = slaveService.getCities();
-        this.countryId = 3;
+        this.countryId = 1;
     }
 }

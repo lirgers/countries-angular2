@@ -2,9 +2,19 @@
 <div class='header'>
     <p class='title'>Countries of the world</p>
 </div>
-<countries [countries]="countries" [countryId]="countryId" (countryIdChange)="countryId=$event">
-</countries>
-<br>
-<br>
-<cities [cities]="cities" [countryId]="countryId" (citiesChange)="cities=$event">
-</cities>
+<div class='container'>
+    <countries
+        [countries]="countries"
+        [countryId]="countryId"
+        (countryIdChange)="countryId=$event"
+        class = 'countries'
+    >
+    </countries>
+    <cities
+        [cities]="cities"
+        [countryId]="countryId"
+        (citiesChange)="cities=$event"
+        class = 'cities'
+    >
+    </cities>
+</div>

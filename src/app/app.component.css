@@ -4,6 +4,26 @@
 }
 
 .title {
+    font-size: x-large;
     color: white;
     padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.countries, .cities {
+    display: flex;
+}
+
+.cities {
+    flex: 3;
+}
+
+.countries {
+    flex: 1;
 }
